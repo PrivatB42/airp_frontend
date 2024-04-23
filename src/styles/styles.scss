@@ -1,0 +1,8 @@
+@import 'variables';
+
+.required:after {
+	color: var(--primary-red);
+	content: '*';
+	margin-left: 3px;
+}
+

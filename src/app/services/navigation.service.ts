@@ -6,6 +6,9 @@ import { Router } from '@angular/router';
 })
 export class NavigationService {
 
+	readonly URL_SLASH = '/';
+	readonly URL_CONNEXION = 'connexion';
+
 	constructor(private router: Router) {
 	}
 
@@ -13,20 +16,26 @@ export class NavigationService {
 		await this.router.navigate([route]);
 	}
 
+	/**
+	 * Retourne true si la page de connexion est affichée.
+	 */
 	isLogin(): boolean {
-		return this.router.url === '/login';
+		return this.router.url === this.construireUrl(this.URL_CONNEXION);
 	}
 
 	isPassword(): boolean {
 		return this.router.url.includes('/password');
 	}
 
-	goToHome(): void {
-		this.goTo('/');
+	goToDashbord(): void {
+		this.goTo('/tableau-de-bord');
 	}
 
+	/**
+	 * Redirige vers la page de connexion.
+	 */
 	goTologin(): void {
-		this.goTo('login');
+		this.goTo(this.URL_CONNEXION);
 	}
 
 	getCurrentUrl(): string {
@@ -39,5 +48,9 @@ export class NavigationService {
 
 	isHome() {
 		return this.router.url.includes('/accueil');
+	}
+
+	private construireUrl(partialUrl: string): string {
+		return [this.URL_SLASH, partialUrl].join('');
 	}
 }

@@ -6,6 +6,7 @@ import {MenuItem, PrimeNGConfig} from "primeng/api";
 import {CommonModule} from "@angular/common";
 import {MenubarModule} from "primeng/menubar";
 import {InputTextModule} from "primeng/inputtext";
+import {Utilisateur} from "./models/utilisateur.model";
 
 @Component({
 	selector: 'app-root',
@@ -16,6 +17,7 @@ import {InputTextModule} from "primeng/inputtext";
 })
 export class AppComponent {
 	items: MenuItem[]
+	utilisateurConnecte: Utilisateur;
 
 	constructor(private navigationService: NavigationService,
 				private authService: AuthService,
@@ -23,7 +25,12 @@ export class AppComponent {
 	}
 
 	ngOnInit(): void {
-		// this.utilisateurConnecte = this.authService.getUtilisateurConnecte();
+		if (this.authService.isAuthenticated()) {
+			this.utilisateurConnecte = this.authService.getUtilisateurConnecte();
+		}
+		else {
+			this.navigationService.goTologin();
+		}
 		this.items = [
 			{
 				label: 'Accueil',
@@ -83,5 +90,20 @@ export class AppComponent {
 				'Novem.',
 				'Decem.']
 		});
+	}
+
+	/**
+	 * Retourne true si la page de connexion est affichée.
+	 */
+	isLogin(): boolean {
+		return this.navigationService.isLogin();
+	}
+
+	/**
+	 * Déconnecte l'utilisateur connecté et redirige vers la page d'authentification.
+	 */
+	deconnecter(): void {
+		localStorage.removeItem('access_token');
+		this.navigationService.goTologin();
 	}
 }

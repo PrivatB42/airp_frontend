@@ -1,15 +1,14 @@
-<p-menubar [model]="items">
+<p-menubar [model]="items" *ngIf="!isLogin()">
 	<ng-template pTemplate="start">
-		<img src="assets/img/logo.png" height="40" class="me-1"  alt="logo"/>
+		<img src="assets/img/logo.png" [height]="40" class="me-1"  alt="logo"/>
 	</ng-template>
 	<ng-template pTemplate="end">
 		<span class="me-2">
-			<em class="fa fa-power-off"></em>
+			<em class="fa fa-power-off" (click)="deconnecter()"></em>
 		</span>
-		<span>T. Koffi</span>
+		<span class="fw-bold me-3">{{ utilisateurConnecte && utilisateurConnecte.nomEtPrenomAbrege() | titlecase }}</span>
 	</ng-template>
 </p-menubar>
 <div>
 	<router-outlet></router-outlet>
 </div>
-

@@ -1,17 +1,17 @@
-import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Injectable} from '@angular/core';
 import {JwtHelperService} from '@auth0/angular-jwt';
 import {Utilisateur} from '../models/utilisateur.model';
 import {Token} from '../models/token.model';
 import {LoginPassword} from "../models/login-password.model";
+import {HttpClient} from "@angular/common/http";
 
 @Injectable({
 	providedIn: 'root'
 })
 export class AuthService {
 
-	private url = '/api/securite';
+	private url = '/ws/securite';
 
 	constructor(private http: HttpClient, private jwtHelper: JwtHelperService) {
 	}
@@ -26,7 +26,7 @@ export class AuthService {
 	 */
 	getUtilisateurConnecte(): Utilisateur {
 		if (this.isAuthenticated()) {
-			const utilisateur = new Utilisateur();
+			const  utilisateur = new Utilisateur();
 			const token = this.jwtHelper.decodeToken(this.getToken());
 
 			utilisateur.id = token.id;
@@ -40,16 +40,19 @@ export class AuthService {
 
 	/**
 	 * Authentifie l'utilisateur.
+	 *
+	 * @param loginPassword l'objet contenant le login et le mot de passe de l'utilisateur.
+	 * @return le {@link Token} de l'utilisateur authentifié.
 	 */
-	authentifier(emailPassword: LoginPassword): Observable<Token> {
-		return this.http.post<Token>(this.url + '/auth', emailPassword);
+	authentifier(loginPassword: LoginPassword): Observable<Token> {
+		return this.http.post<Token>(this.url + '/auth', loginPassword);
 	}
 
 	/**
 	 * Vérifie si l'utilisateur est authentifié et si le token est toujours valide.
 	 * @private
 	 */
-	private isAuthenticated(): boolean {
+	isAuthenticated(): boolean {
 		const token = localStorage.getItem('access_token');
 		if (token) {
 			return !this.jwtHelper.isTokenExpired(token);

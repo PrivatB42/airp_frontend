@@ -1,9 +1,8 @@
 export class LoginPassword {
-	login?: string;
+	username?: string;
 	password?: string;
 
-	constructor(login?: string, password?: string) {
-		this.login = login;
-		this.password = password;
+	constructor(loginPassword: Partial<LoginPassword>) {
+		Object.assign(this, loginPassword)
 	}
 }

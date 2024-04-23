@@ -3,7 +3,6 @@ import {environment} from "../../environments/environment";
 
 export const apiInterceptor: HttpInterceptorFn = (req, next) => {
 	const apiUrl = environment.apiUrl;
-	const url = environment.url;
 	const token = localStorage.getItem('access_token');
 
 	const isAbsoluteUrl = (url: string) => {
@@ -26,10 +25,7 @@ export const apiInterceptor: HttpInterceptorFn = (req, next) => {
 		url: preparerUrl(req.url),
 		withCredentials: true,
 		setHeaders: {
-			'Access-Control-Allow-Credentials': 'true',
-			'Access-Control-Allow-Origin': url,
-			'Access-Control-Expose-Headers': 'Authorization',
-			'Authorization': token
+			'Authorization': token ?? ''
 		}
 	});
 
