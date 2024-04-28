@@ -1,0 +1,41 @@
+<h2 #titreTableauPharmacie style="text-align:center">La Liste Des Pharmacies</h2>
+<div class="card">
+	<p-table
+		[value]="pharmacies"
+		[paginator]="true"
+		[rows]="5"
+		[showCurrentPageReport]="true"
+		[tableStyle]="{ 'min-width': '50rem' }"
+		currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+		[rowsPerPageOptions]="[5, 10, 20]"
+	>
+		<ng-template pTemplate="header">
+			<tr>
+				<th style="width:25%">Numéro</th>
+				<th style="width:25%">Nom</th>
+				<th style="width:25%">Ville</th>
+				<th style="width:25%">Quartier</th>
+				<th style="width:25%">Heure Ouverture</th>
+				<th style="width:25%">Nom Du Gerant</th>
+				<th style="width:25%">Contacts</th>
+			</tr>
+		</ng-template>
+		<ng-template pTemplate="body" let-pharmacie>
+			<tr>
+				<td>{{ pharmacie.numero }}</td>
+				<td>{{ pharmacie.nom }}</td>
+				<td>{{ pharmacie.ville }}</td>
+				<td>{{ pharmacie.quartier }}</td>
+				<td>{{ pharmacie.heure_ouverture }}</td>
+				<td>{{ pharmacie.nom_gerant }}</td>
+				<td>{{ pharmacie.contact }}</td>
+			</tr>
+		</ng-template>
+		<ng-template pTemplate="paginatorleft">
+			<p-button type="button" icon="pi pi-plus" styleClass="p-button-text"></p-button>
+		</ng-template>
+		<ng-template pTemplate="paginatorright">
+			<p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
+		</ng-template>
+	</p-table>
+</div>
