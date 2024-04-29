@@ -6439,19 +6439,21 @@
 	}
 
 	.p-message .p-message-wrapper {
-		padding: 1rem;
+		padding-left: 10px;
+		position: relative;
 	}
 
 	.p-message .p-message-close {
-		width: 2rem;
-		height: 2rem;
+		width: 10px;
+		height: 10px;
+		right: 10px;
 		border-radius: 50%;
 		background: transparent;
 		transition: background-color 0.2s, color 0.2s, box-shadow 0.2s;
-	}
 
-	.p-message .p-message-close:hover {
-		background: rgba(255, 255, 255, 0.5);
+		&.p-link {
+			position: absolute;
+		}
 	}
 
 	.p-message .p-message-close:focus-visible {
@@ -6531,8 +6533,8 @@
 	}
 
 	.p-message .p-icon {
-		width: 1.5rem;
-		height: 1.5rem;
+		width: 15px;
+		height: 15px;
 	}
 
 	.p-message .p-message-summary {

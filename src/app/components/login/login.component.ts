@@ -6,9 +6,13 @@ import {InputTextModule} from "primeng/inputtext";
 import {ButtonModule} from "primeng/button";
 import {RippleModule} from "primeng/ripple";
 import {CommonModule} from "@angular/common";
-import {FormControl, FormGroup, ReactiveFormsModule, Validator, Validators} from "@angular/forms";
-import {CustomValidators} from "../../validators/custom-validators";
+import {FormControl, FormGroup, ReactiveFormsModule, Validators} from "@angular/forms";
 import {NavigationService} from "../../services/navigation.service";
+import {MessageErreurComponent} from "../message-erreur/message-erreur.component";
+import {ApplicationErreur} from "../../models/application-erreur.model";
+import {MessageModule} from "primeng/message";
+import {Message} from "primeng/api";
+import {MessagesModule} from "primeng/messages";
 
 @Component({
 	selector: 'app-login',
@@ -19,7 +23,10 @@ import {NavigationService} from "../../services/navigation.service";
 		InputTextModule,
 		ButtonModule,
 		RippleModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
+		MessageErreurComponent,
+		MessageModule,
+		MessagesModule
 	],
 	templateUrl: './login.component.html',
 	styleUrl: './login.component.scss'
@@ -29,6 +36,8 @@ export class LoginComponent implements OnInit {
 		username: new FormControl('', [Validators.required]),
 		password: new FormControl('', Validators.required),
 	});
+	applicationErreur: ApplicationErreur;
+	messages: Message[];
 	submitted = false;
 
 	constructor(private authService: AuthService,
@@ -54,6 +63,11 @@ export class LoginComponent implements OnInit {
 				},
 				error: (error) => {
 					this.submitted = false;
+					this.applicationErreur = error.error;
+					this.messages = [{
+						severity: this.applicationErreur.type.toLowerCase(),
+						detail: this.applicationErreur.messageAvecCode
+					}];
 				}
 			});
 		}
