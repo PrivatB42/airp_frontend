@@ -32,7 +32,13 @@
 
 
 				<div class="text-right mt-5">
-					<p-button pRipple label="Connexion" icon="fa fa-lock" class="btn-orange" type="submit"></p-button>
+					<p-button pRipple
+							  label="Connexion"
+							  icon="fa fa-lock"
+							  class="green"
+							  [loading]="loading"
+							  type="submit">
+					</p-button>
 				</div>
 			</div>
 		</form>

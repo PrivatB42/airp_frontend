@@ -4,11 +4,12 @@
 	</ng-template>
 	<ng-template pTemplate="end">
 		<span class="me-2">
-			<em class="fa fa-power-off" (click)="deconnecter()"></em>
+			<em class="fa fa-power-off" pTooltip="Se déconnecter" (click)="deconnecter()"></em>
 		</span>
 		<span class="fw-bold me-3">{{ utilisateurConnecte && utilisateurConnecte.nomEtPrenomAbrege() | titlecase }}</span>
 	</ng-template>
 </p-menubar>
+<p-messages *ngIf="applicationErreur" [(value)]="messages"></p-messages>
 <div>
 	<router-outlet></router-outlet>
 </div>

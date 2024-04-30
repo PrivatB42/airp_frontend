@@ -2,25 +2,31 @@ import {Component} from '@angular/core';
 import {RouterOutlet} from '@angular/router';
 import {AuthService} from "./services/auth.service";
 import {NavigationService} from "./services/navigation.service";
-import {MenuItem, PrimeNGConfig} from "primeng/api";
+import {MenuItem, Message, PrimeNGConfig} from "primeng/api";
 import {CommonModule} from "@angular/common";
 import {MenubarModule} from "primeng/menubar";
 import {InputTextModule} from "primeng/inputtext";
 import {Utilisateur} from "./models/utilisateur.model";
+import {ApplicationErreur} from "./models/application-erreur.model";
+import {MessagesModule} from "primeng/messages";
+import {MessageService} from "./services/message-service.service";
 
 @Component({
 	selector: 'app-root',
 	standalone: true,
-	imports: [RouterOutlet, CommonModule, MenubarModule, InputTextModule],
+	imports: [RouterOutlet, CommonModule, MenubarModule, InputTextModule, MessagesModule],
 	templateUrl: './app.component.html',
 	styleUrl: './app.component.scss'
 })
 export class AppComponent {
+	applicationErreur: ApplicationErreur;
 	items: MenuItem[]
+	messages: Message[];
 	utilisateurConnecte: Utilisateur;
 
-	constructor(private navigationService: NavigationService,
-				private authService: AuthService,
+	constructor(private authService: AuthService,
+				private messageService: MessageService,
+				private navigationService: NavigationService,
 				private primeNgConfig: PrimeNGConfig) {
 	}
 
@@ -31,6 +37,17 @@ export class AppComponent {
 		else {
 			this.navigationService.goTologin();
 		}
+
+		this.messageService.messageErreur.subscribe(
+			(applicationErreur) => {
+				this.applicationErreur = applicationErreur;
+				this.messages = [{
+					severity: this.applicationErreur.type.toLowerCase(),
+					detail: this.applicationErreur.messageAvecCode
+				}];
+			}
+		);
+
 		this.items = [
 			{
 				label: 'Accueil',

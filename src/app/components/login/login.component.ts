@@ -37,6 +37,7 @@ export class LoginComponent implements OnInit {
 		password: new FormControl('', Validators.required),
 	});
 	applicationErreur: ApplicationErreur;
+	loading = false;
 	messages: Message[];
 	submitted = false;
 
@@ -56,6 +57,7 @@ export class LoginComponent implements OnInit {
 	authentifier() {
 		this.submitted = true;
 		if (this.formAuthentification.valid) {
+			this.loading = true;
 			this.authService.authentifier(new LoginPassword(this.formAuthentification.value)).subscribe({
 				next: (data) => {
 					AuthService.updateAccessToken(data.token);
@@ -63,6 +65,7 @@ export class LoginComponent implements OnInit {
 				},
 				error: (error) => {
 					this.submitted = false;
+					this.loading = false;
 					this.applicationErreur = error.error;
 					this.messages = [{
 						severity: this.applicationErreur.type.toLowerCase(),

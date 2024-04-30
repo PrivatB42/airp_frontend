@@ -2141,6 +2141,26 @@
 		outline-color: transparent;
 	}
 
+	.green .p-button {
+		color: var(--primary-white);
+		background: var(--primary-green);
+
+		&:not(:disabled):hover {
+			color: var(--primary-white);
+			background: var(--dark-green);
+		}
+	}
+
+	.dark-green .p-button {
+		color: var(--primary-white);
+		background: var(--dark-green);
+
+		&:not(:disabled):hover {
+			color: var(--primary-white);
+			background: var(--primary-green);
+		}
+	}
+
 	.p-button:not(:disabled):hover {
 		background: #AED581;
 		color: #212529;
@@ -6434,7 +6454,7 @@
 	}
 
 	.p-message {
-		margin: 1rem 0;
+		margin: 0;
 		border-radius: 3px;
 	}
 
@@ -6463,63 +6483,63 @@
 	}
 
 	.p-message.p-message-info {
-		background: #7fbcec;
-		border: 0 none;
-		border-width: 0;
-		color: #212121;
+		background: rgba(239, 246, 255, 0.95);
+		border: solid #bfdbfe;
+		border-width: 1px;
+		color: #2563eb;
 	}
 
 	.p-message.p-message-info .p-message-icon {
-		color: #212121;
+		color: #2563eb;
 	}
 
 	.p-message.p-message-info .p-message-close {
-		color: #212121;
+		color: #2563eb;
 	}
 
 	.p-message.p-message-success {
-		background: #b7d8b7;
-		border: 0 none;
-		border-width: 0;
-		color: #212121;
+		background: rgba(240, 253, 244, 0.95);
+		border: solid #bbf7d0;
+		border-width: 1px;
+		color: #16a34a;
 	}
 
 	.p-message.p-message-success .p-message-icon {
-		color: #212121;
+		color: #16a34a;
 	}
 
 	.p-message.p-message-success .p-message-close {
-		color: #212121;
+		color: #16a34a;
 	}
 
 	.p-message.p-message-warn {
-		background: #ffe399;
-		border: 0 none;
-		border-width: 0;
-		color: #212121;
+		background: #FEFCE8F2;
+		border: solid #fde68a;
+		border-width: 1px;
+		color: #ca8a04;
 	}
 
 	.p-message.p-message-warn .p-message-icon {
-		color: #212121;
+		color: #ca8a04;
 	}
 
 	.p-message.p-message-warn .p-message-close {
-		color: #212121;
+		color: #ca8a04;
 	}
 
 	.p-message.p-message-error {
-		background: #f8b7bd;
-		border: 0 none;
-		border-width: 0;
-		color: #212121;
+		background: #FEF2F2F2;
+		border: solid #fecaca;
+		border-width: 1px;
+		color: #dc2626;
 	}
 
 	.p-message.p-message-error .p-message-icon {
-		color: #212121;
+		color: #dc2626;
 	}
 
 	.p-message.p-message-error .p-message-close {
-		color: #212121;
+		color: #dc2626;
 	}
 
 	.p-message .p-message-text {
@@ -6528,7 +6548,7 @@
 	}
 
 	.p-message .p-message-icon {
-		font-size: 1.5rem;
+		font-size: 1.2rem;
 		margin-right: 0.5rem;
 	}
 
@@ -6543,6 +6563,7 @@
 
 	.p-message .p-message-detail {
 		margin-left: 0.5rem;
+		font-size: 14px;
 	}
 
 	.p-toast {

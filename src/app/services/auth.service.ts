@@ -48,6 +48,9 @@ export class AuthService {
 		return this.http.post<Token>(this.url + '/auth', loginPassword);
 	}
 
+	test(): Observable<Token> {
+		return this.http.get<Token>(this.url + '/aut');
+	}
 	/**
 	 * Vérifie si l'utilisateur est authentifié et si le token est toujours valide.
 	 * @private
