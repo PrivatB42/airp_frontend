@@ -15,3 +15,17 @@
 	min-height: 60px;
 }
 
+.background-orange {
+	background: var(--primary-orange);
+	color: var(--primary-white);
+}
+
+.background-gray {
+	background: var(--light-gray);
+	color: var(--primary-black);
+}
+
+.background-dark-gray {
+	background: var(--primary-gray);
+	color: var(--primary-black);
+}

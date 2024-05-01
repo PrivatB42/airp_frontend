@@ -1,1 +1,15 @@
-<p>administration works!</p>
+<div class="page-container col-12">
+	<div *ngIf="version" class="container version-container">
+		<div class="row background-orange fw-bold">
+			<span class="text-center">Version de l'application</span>
+		</div>
+		<div class="row background-gray">
+			<div class="col-3">Version</div>
+			<div class="col-9">{{ version.version }}</div>
+		</div>
+		<div class="row background-dark-gray">
+			<div class="col-3">Sha1</div>
+			<div class="col-9">{{ version.sha1.substring(0, 8) }}</div>
+		</div>
+	</div>
+</div>
