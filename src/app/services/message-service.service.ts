@@ -12,7 +12,7 @@ import {ApplicationErreur} from "../models/application-erreur.model";
 })
 export class MessageService {
 
-	message = new BehaviorSubject(new ApplicationErreur());
+	message = new BehaviorSubject(null as ApplicationErreur);
 
 	messageErreur = this.message.asObservable();
 

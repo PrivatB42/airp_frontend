@@ -41,10 +41,12 @@ export class AppComponent {
 		this.messageService.messageErreur.subscribe(
 			(applicationErreur) => {
 				this.applicationErreur = applicationErreur;
-				this.messages = [{
-					severity: this.applicationErreur.type.toLowerCase(),
-					detail: this.applicationErreur.messageAvecCode
-				}];
+				if (this.applicationErreur) {
+					this.messages = [{
+						severity: this.applicationErreur.type.toLowerCase(),
+						detail: this.applicationErreur.messageAvecCode
+					}];
+				}
 			}
 		);
 

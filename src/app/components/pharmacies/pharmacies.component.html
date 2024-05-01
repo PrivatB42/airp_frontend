@@ -1,23 +1,21 @@
-<h2 #titreTableauPharmacie style="text-align:center">La Liste Des Pharmacies</h2>
-<div class="card">
+<div class="col-12">
 	<p-table
+		class="table-parmacie p-datatable-striped p-datatable-sm"
 		[value]="pharmacies"
 		[paginator]="true"
 		[rows]="5"
 		[showCurrentPageReport]="true"
 		[tableStyle]="{ 'min-width': '50rem' }"
-		currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
-		[rowsPerPageOptions]="[5, 10, 20]"
-	>
+		currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
 		<ng-template pTemplate="header">
 			<tr>
-				<th style="width:25%">Numéro</th>
-				<th style="width:25%">Nom</th>
-				<th style="width:25%">Ville</th>
-				<th style="width:25%">Quartier</th>
-				<th style="width:25%">Heure Ouverture</th>
-				<th style="width:25%">Nom Du Gerant</th>
-				<th style="width:25%">Contacts</th>
+				<th class="col-numero">Numéro</th>
+				<th class="col-nom">Nom</th>
+				<th class="col-ville">Ville</th>
+				<th class="col-quartier">Quartier</th>
+				<th class="col-horaire">Heure Ouverture</th>
+				<th class="col-gerant">Nom Du Gerant</th>
+				<th class="col-contact">Contacts</th>
 			</tr>
 		</ng-template>
 		<ng-template pTemplate="body" let-pharmacie>

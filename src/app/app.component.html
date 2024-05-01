@@ -9,7 +9,9 @@
 		<span class="fw-bold me-3">{{ utilisateurConnecte && utilisateurConnecte.nomEtPrenomAbrege() | titlecase }}</span>
 	</ng-template>
 </p-menubar>
-<p-messages *ngIf="applicationErreur" [(value)]="messages"></p-messages>
-<div>
+<div class="message-erreur-container">
+	<p-messages *ngIf="applicationErreur" [(value)]="messages"></p-messages>
+</div>
+<div class="">
 	<router-outlet></router-outlet>
 </div>

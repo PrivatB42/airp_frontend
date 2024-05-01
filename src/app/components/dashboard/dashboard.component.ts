@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {AuthService} from "../../services/auth.service";
 import {MessageService} from "../../services/message-service.service";
+import {LoginPassword} from "../../models/login-password.model";
 
 @Component({
 	selector: 'app-dashboard',
@@ -18,11 +19,11 @@ export class DashboardComponent implements OnInit {
 
 	ngOnInit(): void {
 		// TODO à retirer (ce code sera utilisé comme exemple d'affichage d'erreur)
-		// this.authService.authentifier(new LoginPassword({username: 'azerty', password: 'azerty'})).subscribe({
-		// 	next: () => console.log('Ok ...'),
-		// 	error: (erreur) => {
-		// 		this.messageService.updateMessageErreur(erreur.error);
-		// 	}
-		// })
+		this.authService.authentifier(new LoginPassword({username: 'azerty', password: 'azerty'})).subscribe({
+			next: () => console.log('Ok ...'),
+			error: (erreur) => {
+				this.messageService.updateMessageErreur(erreur.error);
+			}
+		})
 	}
 }

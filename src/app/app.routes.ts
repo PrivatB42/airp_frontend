@@ -3,7 +3,8 @@ import {DashboardComponent} from "./components/dashboard/dashboard.component";
 import {AdministrationComponent} from "./components/administration/administration.component";
 import {LoginComponent} from "./components/login/login.component";
 import {ReferentielComponent} from "./components/referentiel/referentiel.component";
-import {PharmaciesComponent} from "./components/referentiel/pharmacies/pharmacies.component";
+import {PharmaciesComponent} from "./components/pharmacies/pharmacies.component";
+import {MedicamentsComponent} from "./components/medicaments/medicaments.component";
 
 export const routes: Routes = [
 	{
@@ -26,6 +27,10 @@ export const routes: Routes = [
 			{
 				path: 'pharmacies',
 				component: PharmaciesComponent
+			},
+			{
+				path: 'medicaments',
+				component: MedicamentsComponent
 			}
 		],
 	},

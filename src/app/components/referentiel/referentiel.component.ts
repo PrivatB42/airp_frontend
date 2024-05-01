@@ -20,11 +20,14 @@ export class ReferentielComponent {
 		this.items = [
 			{
 				label: 'Pharmacies',
-				icon: 'fa fa-plus',
-				routerLink: 'pharmacies'
+				routerLink: '/referentiel/pharmacies'
 			},
+			{
+				label: 'Médicaments',
+				routerLink: '/referentiel/medicaments'
+			}
 		]
-	 this.activeItem = this.items[0];
+	 // this.activeItem = this.items[0];
 	}
 
 }

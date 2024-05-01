@@ -1,8 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {Pharmacie} from "../../../models/pharmacie.model";
+import {Pharmacie} from "../../models/pharmacie.model";
 import {TableModule} from "primeng/table";
 import {ButtonModule} from "primeng/button";
-import {PharmaciesService} from "../../../services/pharmacies.service";
+import {PharmaciesService} from "../../services/pharmacies.service";
 
 @Component({
   selector: 'app-pharmacies',
@@ -12,7 +12,7 @@ import {PharmaciesService} from "../../../services/pharmacies.service";
 		ButtonModule
 	],
   templateUrl: './pharmacies.component.html',
-  styleUrl: './pharmacies.component.css'
+  styleUrl: './pharmacies.component.scss'
 })
 export class PharmaciesComponent implements OnInit{
 	pharmacies: Pharmacie[];
