@@ -3,13 +3,15 @@ import {Pharmacie} from "../../models/pharmacie.model";
 import {TableModule} from "primeng/table";
 import {ButtonModule} from "primeng/button";
 import {PharmaciesService} from "../../services/pharmacies.service";
+import {RippleModule} from "primeng/ripple";
 
 @Component({
   selector: 'app-pharmacies',
   standalone: true,
 	imports: [
 		TableModule,
-		ButtonModule
+		ButtonModule,
+		RippleModule
 	],
   templateUrl: './pharmacies.component.html',
   styleUrl: './pharmacies.component.scss'

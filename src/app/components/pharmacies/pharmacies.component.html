@@ -1,4 +1,4 @@
-<div class="col-12">
+<div class="page-container col-12">
 	<p-table
 		class="table-parmacie p-datatable-striped p-datatable-sm"
 		[value]="pharmacies"
@@ -36,4 +36,18 @@
 			<p-button type="button" icon="pi pi-cloud" styleClass="p-button-text"></p-button>
 		</ng-template>
 	</p-table>
+</div>
+
+<div class="footer-container d-flex gap-1 col-12">
+	<p-button pRipple
+			  label="Créer"
+			  icon="fa fa-plus"
+			  class="green">
+	</p-button>
+
+	<p-button pRipple
+			  label="Importer"
+			  icon="fa fa-upload"
+			  class="green">
+	</p-button>
 </div>

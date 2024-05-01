@@ -2161,6 +2161,16 @@
 		}
 	}
 
+	.orange .p-button {
+		color: var(--primary-white);
+		background: var(--primary-orange);
+
+		&:not(:disabled):hover {
+			color: var(--primary-white);
+			background: var(--dark-orange);
+		}
+	}
+
 	.p-button:not(:disabled):hover {
 		background: #AED581;
 		color: #212529;
