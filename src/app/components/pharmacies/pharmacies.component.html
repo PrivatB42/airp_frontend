@@ -14,7 +14,7 @@
 				<th class="col-ville">Ville</th>
 				<th class="col-quartier">Quartier</th>
 				<th class="col-horaire">Heure Ouverture</th>
-				<th class="col-gerant">Nom Du Gerant</th>
+				<th class="col-gerant">Nom du Gérant</th>
 				<th class="col-contact">Contacts</th>
 			</tr>
 		</ng-template>
@@ -24,8 +24,8 @@
 				<td>{{ pharmacie.nom }}</td>
 				<td>{{ pharmacie.ville }}</td>
 				<td>{{ pharmacie.quartier }}</td>
-				<td>{{ pharmacie.heure_ouverture }}</td>
-				<td>{{ pharmacie.nom_gerant }}</td>
+				<td>{{ pharmacie.heureOuvertureFormate() }}</td>
+				<td>{{ pharmacie.nomGerant}}</td>
 				<td>{{ pharmacie.contact }}</td>
 			</tr>
 		</ng-template>

@@ -25,6 +25,11 @@ export const routes: Routes = [
 		component: ReferentielComponent,
 		children: [
 			{
+				path: '',
+				redirectTo: 'pharmacies',
+				pathMatch: 'full'
+			},
+			{
 				path: 'pharmacies',
 				component: PharmaciesComponent
 			},

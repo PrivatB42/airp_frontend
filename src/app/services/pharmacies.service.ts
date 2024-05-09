@@ -1,17 +1,24 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
-import {Observable} from "rxjs";
+import {map, Observable} from "rxjs";
 import {Pharmacie} from "../models/pharmacie.model";
 
 @Injectable({
-  providedIn: 'root'
+	providedIn: 'root'
 })
 export class PharmaciesService {
-	private baseUrl = '/ws/pharmacie';
+	baseUrl = '/ws/pharmacie';
 
-  constructor(private http: HttpClient,) { }
+	constructor(private http: HttpClient) {
+	}
 
+	/**
+	 * Récupère la liste des pharmacies.
+	 */
 	lister(): Observable<Pharmacie[]> {
-	  return this.http.get<Pharmacie[]>(`${this.baseUrl}/lister`);
+		return this.http.get<Pharmacie[]>(`${this.baseUrl}/lister`).pipe(
+			map(pharmacies => pharmacies.map(
+				pharmacie => new Pharmacie().deserialize(pharmacie)))
+		);
 	}
 }

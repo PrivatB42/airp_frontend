@@ -19,6 +19,7 @@ import {MessageService} from "./services/message-service.service";
 	styleUrl: './app.component.scss'
 })
 export class AppComponent {
+	title = 'airp'
 	applicationErreur: ApplicationErreur;
 	items: MenuItem[]
 	messages: Message[];
