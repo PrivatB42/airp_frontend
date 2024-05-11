@@ -19,6 +19,10 @@ export class Pharmacie {
 		return this;
 	}
 
+	serialize() {
+		return Object.assign({}, this);
+	}
+
 	/**
 	 * Formate l'heure d'ouverture (Ex: 07:35)
 	 */

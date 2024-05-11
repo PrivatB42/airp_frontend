@@ -1,3 +1,4 @@
+<modal-import (statusImport)="onImportSucces()"></modal-import>
 <div class="page-container col-12">
 	<p-table
 		class="table-parmacie p-datatable-striped p-datatable-sm"
@@ -47,10 +48,13 @@
 			  class="green">
 	</p-button>
 
-	<p-button pRipple
-			  label="Importer"
-			  icon="fa fa-download"
-			  class="green">
+	<p-button
+		pRipple
+		label="Importer"
+		icon="fa fa-upload"
+		class="green"
+		(onClick)="ouvrirModalImport()"
+	>
 	</p-button>
 
 	<p-button pRipple

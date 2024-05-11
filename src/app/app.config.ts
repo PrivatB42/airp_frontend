@@ -6,6 +6,7 @@ import {HTTP_INTERCEPTORS, provideHttpClient, withInterceptors} from "@angular/c
 import {apiInterceptor} from "./interceptors/api.interceptor";
 import {JWT_OPTIONS, JwtHelperService, JwtInterceptor} from "@auth0/angular-jwt";
 import {HashLocationStrategy, LocationStrategy} from "@angular/common";
+import {provideAnimations} from "@angular/platform-browser/animations";
 
 export const httpInterceptorsProviders = [
 	// {provide: HTTP_INTERCEPTORS, useClass: ApiUrlInterceptor, multi: true},
@@ -15,6 +16,7 @@ export const httpInterceptorsProviders = [
 export const appConfig: ApplicationConfig = {
 	providers: [
 		provideRouter(routes),
+		provideAnimations(),
 		provideHttpClient(withInterceptors([apiInterceptor])),
 		JwtHelperService,
 		httpInterceptorsProviders,

@@ -27,3 +27,15 @@
 		width: 10%;
 	}
 }
+
+input[type="file"] {
+	margin-bottom: 5px;
+	cursor: pointer;
+	width:120px;
+	height: 40px;
+	border:none;
+	&:hover {
+		background-color: #1B4F08;
+		color: #fff;
+	}
+}

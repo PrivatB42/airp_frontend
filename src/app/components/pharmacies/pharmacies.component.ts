@@ -1,10 +1,13 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnInit, ViewChild} from '@angular/core';
 import {Pharmacie} from "../../models/pharmacie.model";
 import {TableModule} from "primeng/table";
 import {ButtonModule} from "primeng/button";
 import {PharmaciesService} from "../../services/pharmacies.service";
 import {RippleModule} from "primeng/ripple";
 import {MessageService} from "../../services/message-service.service";
+import {InputTextModule} from "primeng/inputtext";
+import { ModalImportComponent } from "./modal-import/modal-import.component";
+import { ModalImportComponent } from "./modal-import/modal-import.component";
 
 @Component({
   selector: 'app-pharmacies',
@@ -13,11 +16,14 @@ import {MessageService} from "../../services/message-service.service";
 		TableModule,
 		ButtonModule,
 		RippleModule,
+		InputTextModule,
+		ModalImportComponent
 	],
   templateUrl: './pharmacies.component.html',
   styleUrl: './pharmacies.component.scss'
 })
 export class PharmaciesComponent implements OnInit{
+	@ViewChild(ModalImportComponent) modalImport!: ModalImportComponent;
 	private readonly SEPARATEUR_CSV = ',';
 	pharmacies: Pharmacie[];
 
@@ -41,6 +47,18 @@ export class PharmaciesComponent implements OnInit{
 				this.messageService.updateMessageErreur(error.error);
 			}
 		);
+	}
+
+	/**
+	 * Ouvre la modale d'import
+	 */
+	ouvrirModalImport() {
+		this.modalImport.ouvrePopup();
+	}
+
+	onImportSucces() {
+		this.recupererPharmacies();
+		this.modalImport.cacherPopup();
 	}
 
 	/**
