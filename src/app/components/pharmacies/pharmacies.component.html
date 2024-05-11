@@ -45,9 +45,13 @@
 			  class="green">
 	</p-button>
 
-	<p-button pRipple
-			  label="Importer"
-			  icon="fa fa-upload"
-			  class="green">
-	</p-button>
+	<p-fileUpload
+		mode="basic"
+		name="fichier"
+		chooseIcon="pi pi-upload"
+		[url]="urlImport"
+		accept=".xlsx, .xls, .csv" maxFileSize="1000000"
+		(onUpload)="onUpload($event)"
+		[auto]="true"
+		chooseLabel="Importer"/>
 </div>

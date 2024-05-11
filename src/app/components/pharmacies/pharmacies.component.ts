@@ -5,6 +5,7 @@ import {ButtonModule} from "primeng/button";
 import {PharmaciesService} from "../../services/pharmacies.service";
 import {RippleModule} from "primeng/ripple";
 import {MessageService} from "../../services/message-service.service";
+import {FileUploadEvent, FileUploadModule} from "primeng/fileupload";
 
 @Component({
   selector: 'app-pharmacies',
@@ -13,19 +14,21 @@ import {MessageService} from "../../services/message-service.service";
 		TableModule,
 		ButtonModule,
 		RippleModule,
+		FileUploadModule,
 	],
   templateUrl: './pharmacies.component.html',
   styleUrl: './pharmacies.component.scss'
 })
 export class PharmaciesComponent implements OnInit{
 	pharmacies: Pharmacie[];
-
+	urlImport: string;
 	constructor(private pharmacieService: PharmaciesService,
 				private messageService: MessageService) {
 	}
 
 	ngOnInit(): void {
 		this.recupererPharmacies();
+		this.urlImport = this.pharmacieService.importPharmacieUrl;
 	}
 
 	/**
@@ -40,5 +43,9 @@ export class PharmaciesComponent implements OnInit{
 				this.messageService.updateMessageErreur(error.error);
 			}
 		);
+	}
+
+	onUpload($event: FileUploadEvent): void {
+		this.recupererPharmacies();
 	}
 }

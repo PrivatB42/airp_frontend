@@ -8,6 +8,7 @@ import {Pharmacie} from "../models/pharmacie.model";
 })
 export class PharmaciesService {
 	baseUrl = '/ws/pharmacie';
+	importPharmacieUrl = this.baseUrl + '/import';
 
 	constructor(private http: HttpClient) {
 	}
