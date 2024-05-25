@@ -1,12 +1,14 @@
 <div class="page-container col-12">
 	<p-table
 		class="table-parmacie p-datatable-striped p-datatable-sm"
-		[value]="pharmacies"
+		currentPageReportTemplate="Pharmacie {first} à {last} sur {totalRecords} pharmacies"
 		[paginator]="true"
-		[rows]="5"
+		[rows]="14"
+		[scrollable]="true"
+		scrollHeight="650px"
 		[showCurrentPageReport]="true"
 		[tableStyle]="{ 'min-width': '50rem' }"
-		currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
+		[value]="pharmacies">
 		<ng-template pTemplate="header">
 			<tr>
 				<th class="col-numero">Numéro</th>
