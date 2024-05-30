@@ -58,6 +58,11 @@ export class AppComponent {
 				routerLink: 'tableau-de-bord'
 			},
 			{
+				label: 'Carte',
+				icon: 'fa fa-map-marker',
+				routerLink: 'carte'
+			},
+			{
 				label: 'Référentiel',
 				icon: 'fa fa-align-left',
 				routerLink: 'referentiel'
@@ -65,7 +70,7 @@ export class AppComponent {
 			{
 				label: 'Administration',
 				icon: 'fa fa-cogs',
-				routerLink: 'administration',
+				routerLink: 'administration'
 			}
 		];
 		this.primeNgConfig.setTranslation({

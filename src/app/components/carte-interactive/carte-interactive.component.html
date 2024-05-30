@@ -1,0 +1,12 @@
+<div class="container">
+	<div class="map-container">
+		<div *ngIf="!loading" id="map">
+		</div>
+		<p-progressSpinner *ngIf="loading"
+						   styleClass="style-spinner"
+						   strokeWidth="8"
+						   fill="var(--surface-ground)"
+						   animationDuration=".5s">
+		</p-progressSpinner>
+	</div>
+</div>

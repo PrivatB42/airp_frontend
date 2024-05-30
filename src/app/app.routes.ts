@@ -5,6 +5,7 @@ import {LoginComponent} from "./components/login/login.component";
 import {ReferentielComponent} from "./components/referentiel/referentiel.component";
 import {PharmaciesComponent} from "./components/pharmacies/pharmacies.component";
 import {MedicamentsComponent} from "./components/medicaments/medicaments.component";
+import {CarteInteractiveComponent} from "./components/carte-interactive/carte-interactive.component";
 
 export const routes: Routes = [
 	{
@@ -42,5 +43,9 @@ export const routes: Routes = [
 	{
 		path: 'administration',
 		component: AdministrationComponent
+	},
+	{
+		path: 'carte',
+		component: CarteInteractiveComponent
 	}
 ];

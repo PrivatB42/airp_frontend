@@ -17,13 +17,5 @@ export class DashboardComponent implements OnInit {
 				private messageService: MessageService) {
 	}
 
-	ngOnInit(): void {
-		// TODO à retirer (ce code sera utilisé comme exemple d'affichage d'erreur)
-		this.authService.authentifier(new LoginPassword({username: 'azerty', password: 'azerty'})).subscribe({
-			next: () => console.log('Ok ...'),
-			error: (erreur) => {
-				this.messageService.updateMessageErreur(erreur.error);
-			}
-		})
-	}
+	ngOnInit(): void {}
 }

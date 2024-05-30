@@ -1,12 +1,15 @@
+<modal-import (statusImport)="onImportSucces()"></modal-import>
 <div class="page-container col-12">
 	<p-table
 		class="table-parmacie p-datatable-striped p-datatable-sm"
-		[value]="pharmacies"
+		currentPageReportTemplate="Pharmacie {first} à {last} sur {totalRecords} pharmacies"
 		[paginator]="true"
-		[rows]="5"
+		[rows]="14"
+		[scrollable]="true"
+		scrollHeight="650px"
 		[showCurrentPageReport]="true"
 		[tableStyle]="{ 'min-width': '50rem' }"
-		currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries">
+		[value]="pharmacies">
 		<ng-template pTemplate="header">
 			<tr>
 				<th class="col-numero">Numéro</th>
@@ -45,13 +48,19 @@
 			  class="green">
 	</p-button>
 
-	<p-fileUpload
-		mode="basic"
-		name="fichier"
-		chooseIcon="pi pi-upload"
-		[url]="urlImport"
-		accept=".xlsx, .xls, .csv" maxFileSize="1000000"
-		(onUpload)="onUpload($event)"
-		[auto]="true"
-		chooseLabel="Importer"/>
+	<p-button
+		pRipple
+		label="Importer"
+		icon="fa fa-upload"
+		class="green"
+		(onClick)="ouvrirModalImport()"
+	>
+	</p-button>
+
+	<p-button pRipple
+			  (onClick)="exporterTemplatePharmacie()"
+			  label="Exporter CSV"
+			  icon="fa fa-upload"
+			  class="green">
+	</p-button>
 </div>

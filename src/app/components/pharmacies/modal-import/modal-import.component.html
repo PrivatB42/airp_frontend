@@ -1,0 +1,52 @@
+<p-toast [style]="{marginTop: '100px'}"></p-toast>
+<div class="card flex justify-content-center">
+    <p-dialog header="Import des pharmacies" [(visible)]="affichePopup" [modal]="true">
+
+        <div class="flex justify-content-center">
+            <p-fileUpload *ngIf="!loading && !entetesLignesNonEnregistrees?.length" name="fichiers" maxFileSize="1000000"
+                chooseIcon="pi pi-upload" chooseLabel="Choisir" uploadLabel="Envoyez" cancelLabel="Annuler"
+                [fileLimit]="1" [url]="urlImport" accept=".xlsx, .csv" (onUpload)="onUpload($event)"
+                (onError)="onUploadError($event)" [multiple]="true" chooseLabel="Importer">
+                <ng-template pTemplate="content">
+                    <ul *ngIf="fichiers.length">
+                        <li *ngFor="let file of fichiers">
+                            {{ file.name }} - {{ file.size }} Ko
+                        </li>
+                    </ul>
+                </ng-template>
+            </p-fileUpload>
+            <p-fieldset *ngIf="!loading && entetesLignesNonEnregistrees?.length"
+                legend="Ces pharmacies n'ont pas pu être enregistrées">
+                <p-table [columns]="entetesLignesNonEnregistrees" [value]="lignesNonEnregistrees"
+                    [tableStyle]="{ 'min-width': '50rem' }">
+                    <ng-template pTemplate="header">
+                        <tr>
+                            <th class="col-numero">Numéro</th>  
+                            <th class="col-nom">Nom</th>
+                            <th class="col-ville">Ville</th>
+                            <th class="col-quartier">Quartier</th>
+                            <th class="col-horaire">Heure Ouverture</th>
+                            <th class="col-horaire">Heure Fermeture</th>
+                            <th class="col-gerant">Nom du Gérant</th>
+                            <th class="col-contact">Contacts</th>
+                        </tr>
+                    </ng-template>
+                    <ng-template pTemplate="body" let-rowData let-columns="columns">
+                        <tr>
+                            <td *ngFor="let col of columns">
+                                {{ rowData[col] }}
+                            </td>
+                        </tr>
+                    </ng-template>
+                </p-table>
+            </p-fieldset>
+
+            <p-progressSpinner *ngIf="loading" styleClass="style-spinner" strokeWidth="8" fill="var(--surface-ground)"
+                animationDuration=".5s">
+            </p-progressSpinner>
+        </div>
+        <p-footer>
+            <button type="button" pButton icon="fa fa-times" (click)="cacherPopup()" label="Fermer"></button>
+        </p-footer>
+    </p-dialog>
+</div>

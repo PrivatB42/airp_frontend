@@ -11,7 +11,7 @@ export const apiInterceptor: HttpInterceptorFn = (req, next) => {
 	};
 
 	const preparerUrl = (url: string) => {
-		if (url.includes('assets')) {
+		if (url.includes('assets') || url.includes('data')) {
 			return url;
 		}
 
