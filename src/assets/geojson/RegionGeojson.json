@@ -1,4 +1,4 @@
-{
+[.'{
   "type": "FeatureCollection",
   "features": [
     {
@@ -8167,7 +8167,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "TCHOLOGO",
-        "population": null,
+        "population": 603082,
         "code": "24",
         "nombre_departement": 3
       }
@@ -12445,7 +12445,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "WORODOUGOU",
-        "population": null,
+        "population": 429812,
         "code": "29",
         "nombre_departement": 2
       }
@@ -17336,7 +17336,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "CAVALLY                                           ",
-        "population": null,
+        "population": 708242,
         "code": "17",
         "nombre_departement": 4
       }
@@ -20679,7 +20679,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "SAN-PEDRO                                         ",
-        "population": null,
+        "population": 1060723,
         "code": "03",
         "nombre_departement": 2
       }
@@ -23243,7 +23243,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "NAWA                                              ",
-        "population": null,
+        "population": 1165472,
         "code": "02",
         "nombre_departement": 4
       }
@@ -26132,7 +26132,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "INDENIE-DJUABLIN                                  ",
-        "population": null,
+        "population": 716443,
         "code": "04",
         "nombre_departement": 3
       }
@@ -27896,7 +27896,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "N'ZI                                              ",
-        "population": null,
+        "population": 254625,
         "code": "13",
         "nombre_departement": 3
       }
@@ -30804,7 +30804,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "BAGOUE                                            ",
-        "population": null,
+        "population": 515892,
         "code": "22",
         "nombre_departement": 3
       }
@@ -33895,7 +33895,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "FOLON                                             ",
-        "population": null,
+        "population": 146211,
         "code": "06",
         "nombre_departement": 2
       }
@@ -36842,7 +36842,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "PORO                                              ",
-        "population": null,
+        "population": 1040458,
         "code": "23",
         "nombre_departement": 4
       }
@@ -39103,7 +39103,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "BOUNKANI                                          ",
-        "population": null,
+        "population": 427035,
         "code": "30",
         "nombre_departement": 4
       }
@@ -40886,7 +40886,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "GONTOUGO                                          ",
-        "population": null,
+        "population": 917833,
         "code": "31",
         "nombre_departement": 5
       }
@@ -44984,7 +44984,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "BAFING                                            ",
-        "population": null,
+        "population": 262849,
         "code": "27",
         "nombre_departement": 3
       }
@@ -49278,7 +49278,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "TONKPI                                            ",
-        "population": null,
+        "population": 1387908,
         "code": "19",
         "nombre_departement": 5
       }
@@ -51756,7 +51756,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "GUEMON                                            ",
-        "population": null,
+        "population": 930871,
         "code": "18",
         "nombre_departement": 4
       }
@@ -52972,7 +52972,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "HAUT-SASSANDRA                                    ",
-        "population": null,
+        "population": 1739694,
         "code": "20",
         "nombre_departement": 4
       }
@@ -54161,7 +54161,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "MARAHOUE                                          ",
-        "population": null,
+        "population": 981179,
         "code": "21",
         "nombre_departement": 3
       }
@@ -56346,7 +56346,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "MORONOU                                           ",
-        "population": null,
+        "population": 439755,
         "code": "12",
         "nombre_departement": 3
       }
@@ -57397,7 +57397,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "GOH                                               ",
-        "population": null,
+        "population": 985284,
         "code": "08",
         "nombre_departement": 2
       }
@@ -59015,7 +59015,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "LOH-DJIBOUA                                       ",
-        "population": null,
+        "population": 1103158,
         "code": "09",
         "nombre_departement": 3
       }
@@ -61548,7 +61548,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "GBOKLE                                            ",
-        "population": null,
+        "population": 460981,
         "code": "01",
         "nombre_departement": 2
       }
@@ -64506,7 +64506,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "SUD-COMOE                                         ",
-        "population": null,
+        "population": 784892,
         "code": "05",
         "nombre_departement": 4
       }
@@ -66458,7 +66458,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "IFFOU                                             ",
-        "population": null,
+        "population": 378558,
         "code": "11",
         "nombre_departement": 4
       }
@@ -71264,7 +71264,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "KABADOUGOU                                        ",
-        "population": null,
+        "population": 289805,
         "code": "07",
         "nombre_departement": 5
       }
@@ -73360,7 +73360,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "GRANDS PONTS                                      ",
-        "population": null,
+        "population": 450006,
         "code": "15",
         "nombre_departement": 3
       }
@@ -75436,7 +75436,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "ABIDJAN",
-        "population": 90,
+        "population": 6321017,
         "code": "A1",
         "nombre_departement": 1
       }
@@ -76431,7 +76431,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "YAMOUSSOUKRO",
-        "population": 20,
+        "population": 422072,
         "code": "A2",
         "nombre_departement": 2
       }
@@ -79388,7 +79388,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "BELIER",
-        "population": null,
+        "population": 415592,
         "code": "10",
         "nombre_departement": 4
       }
@@ -81093,7 +81093,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "GBEKE",
-        "population": null,
+        "population": 1352900,
         "code": "25",
         "nombre_departement": 3
       }
@@ -84556,7 +84556,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "HAMBOL                                            ",
-        "population": null,
+        "population": 612030,
         "code": "26",
         "nombre_departement": 3
       }
@@ -88318,7 +88318,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "BERE                                              ",
-        "population": null,
+        "population": 492151,
         "code": "28",
         "nombre_departement": 3
       }
@@ -92558,7 +92558,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "LA ME                                             ",
-        "population": null,
+        "population": 726667,
         "code": "16",
         "nombre_departement": 4
       }
@@ -94630,7 +94630,7 @@
       "geometry_name": "geom",
       "properties": {
         "nom": "AGNEBY-TIASSA                                     ",
-        "population": null,
+        "population": 865953,
         "code": "14",
         "nombre_departement": 4
       }
